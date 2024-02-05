@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {DataSchema, StockData} from './dataScheme';
+import {DataSchema, StockData} from './dataSchema';
 import {styles} from './styles';
 
 export const App = (): JSX.Element => {
@@ -52,18 +52,18 @@ export const App = (): JSX.Element => {
         <View style={styles.container}>
           <Text style={styles.boldFont}>{item.symbol}</Text>
           <Text>
-            <Text>{'LTP: '}</Text>
+            <Text style={styles.fontColor}>{'LTP: '}</Text>
             <Text style={styles.boldFont}>{'₹' + item.ltp.toFixed(2)}</Text>
           </Text>
         </View>
         <View style={styles.container}>
-          <Text>{item.quantity}</Text>
+          <Text style={styles.fontColor}>{item.quantity}</Text>
           <Text>
-            <Text>{'P/L: '}</Text>
+            <Text style={styles.fontColor}>{'P/L: '}</Text>
             <Text
               style={[
-                {color: pnlValue < 0 ? 'red' : 'green'},
                 styles.boldFont,
+                {color: pnlValue < 0 ? 'red' : 'green'},
               ]}>
               {'₹ ' + pnlValue.toFixed(2)}
             </Text>
@@ -99,11 +99,15 @@ export const App = (): JSX.Element => {
           <View>
             <View style={styles.container}>
               <Text style={styles.boldFont}>{'Current Value:'}</Text>
-              <Text>{'₹' + totalCurrValue.toFixed(2)}</Text>
+              <Text style={styles.fontColor}>
+                {'₹' + totalCurrValue.toFixed(2)}
+              </Text>
             </View>
             <View style={styles.container}>
               <Text style={styles.boldFont}>{'Total Investment:'}</Text>
-              <Text>{'₹' + totalInvestment.toFixed(2)}</Text>
+              <Text style={styles.fontColor}>
+                {'₹' + totalInvestment.toFixed(2)}
+              </Text>
             </View>
             <View style={styles.container}>
               <Text style={styles.boldFont}>{"Today's Profit & Loss:"}</Text>

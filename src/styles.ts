@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
   },
   boldFont: {
     fontWeight: 'bold',
+    color: 'black',
+  },
+  fontColor: {
+    color: 'black',
   },
   topBanner: {
     backgroundColor: 'purple',
